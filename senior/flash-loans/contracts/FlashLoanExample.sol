@@ -5,14 +5,23 @@ import "@openzeppelin/contracts/utils/math/SafeMath.sol";
 import "@aave/core-v3/contracts/flashloan/base/FlashLoanSimpleReceiverBase.sol";
 import "@openzeppelin/contracts/token/ERC20/IERC20.sol";
 
+// https://github.com/aave/aave-v3-core/blob/master/contracts/flashloan/base/FlashLoanSimpleReceiverBase.sol
 contract FlashLoanExample is FlashLoanSimpleReceiverBase {
     using SafeMath for uint;
     event Log(address asset, uint val);
 
+    // takes a provider of type IPoolAddressProvider (Pool Contract in README)
+    // https://github.com/aave/aave-v3-core/blob/master/contracts/interfaces/IPoolAddressesProvider.sol
     constructor(IPoolAddressesProvider provider)
         FlashLoanSimpleReceiverBase(provider)
     {}
 
+    // takes in the asset and amount from the user for the flash loan
+    // for reciever, can specify address of FlashloanExample Contract with no params
+    // referral Code is kept as 0 because transaction is ececuted by user directly
+    // https://docs.aave.com/developers/core-contracts/pool
+    // call flashLoanSimple method inside instance of Pool Contract which is initialized within FlashLoanSimpleRecieverBase
+    // send the asset requested and will call executeOperation method
     function createFlashLoan(address asset, uint amount) external {
         address receiver = address(this);
         bytes memory params = ""; // use this to pass arbitrary data to executeOperation
@@ -21,6 +30,9 @@ contract FlashLoanExample is FlashLoanSimpleReceiverBase {
         POOL.flashLoanSimple(receiver, asset, amount, params, referralCode);
     }
 
+    // can do anything with the asset
+    // only Pool contract has approval to withdraw the amount + premium
+    // emit a log and return from function
     function executeOperation(
         address asset,
         uint256 amount,

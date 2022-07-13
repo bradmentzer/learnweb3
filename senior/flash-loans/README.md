@@ -20,3 +20,7 @@ The user started a transaction by calling the createFlashLoan method in FlashLoa
 After calling the executeOperation method and recieving the DAI, you can call the contraact for Exchange A and buy some token from the DAI the Pool Contract sent. After recieving this token, you ca swap them for DAI by calling Exchange B contract.
 
 Never store flashloan funds in a contract because it is vulnerable to a [griefing attack](https://ethereum.stackexchange.com/questions/92391/explain-griefing-attack-on-aave-flash-loan/92457?newreg=ad9c8df3e40b4314bf0d9461766c1d2c)
+
+### Forking Hardhat
+
+[Fork Hardhat](https://hardhat.org/hardhat-network/docs/guides/forking-other-networks) to test loan locally. Configued with hardhat.config.js
