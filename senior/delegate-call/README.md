@@ -17,3 +17,5 @@ Function arguments convert each argument into a hex string of length 32 bytes an
 Used with proxy contracts. The storage contract makes a call using .delegatecall() which allows differenct versions of the code while maintaining the same storage. The logic changes but data does not.
 
 This directory contains three contracts: Attack, Good, Helper. Attack is used to change the owner of Good using .delegatecall()
+
+Avoid this attack by using stateless library contracts. The contracts where you delegate the call should only be used for the execution of logic and should not maintain state. Then, it will not be possible for functions to modify the state of the calling contract.
