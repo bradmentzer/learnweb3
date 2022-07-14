@@ -23,3 +23,7 @@ Computers interacting with the blockchain are both deterministic and transparent
 - After the VRFCoordinator has the randomness it calls the fullFillRandomness function within the VRFConsumerBase which further then selects the winner.
 
 Note the important part is that eventhough you called the requestRandomness function you get the randomness back in the fullFillRandomness function
+
+Verify Contract Address: 0xB61079C547b6B436619a8219Da958F3cc2E215fc
+Successfully verified contract RandomWinnerGame on Etherscan.
+https://mumbai.polygonscan.com/address/0xB61079C547b6B436619a8219Da958F3cc2E215fc#code
