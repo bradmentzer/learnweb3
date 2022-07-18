@@ -27,3 +27,11 @@ Note the important part is that eventhough you called the requestRandomness func
 Verify Contract Address: 0xB61079C547b6B436619a8219Da958F3cc2E215fc
 Successfully verified contract RandomWinnerGame on Etherscan.
 https://mumbai.polygonscan.com/address/0xB61079C547b6B436619a8219Da958F3cc2E215fc#code
+
+graph init --contract-name RandomWinnerGame --product hosted-service gatorbait-eth/Learnweb3 --from-contract 0xB61079C547b6B436619a8219Da958F3cc2E215fc --abi ./abi.json --network mumbai graph
+
+Build completed: QmX74GeJpACTHxYJAY6MJEJtTKHPCDcg3oauUmhD6PJPaA
+
+https://api.thegraph.com/subgraphs/name/gatorbait-eth/learnweb3
+
+[Entities](https://thegraph.com/docs/en/developing/creating-a-subgraph/#defining-entities)
