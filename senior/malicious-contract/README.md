@@ -1,13 +1,12 @@
-# Sample Hardhat Project
+# Malicious Contracts
 
-This project demonstrates a basic Hardhat use case. It comes with a sample contract, a test for that contract, and a script that deploys that contract.
+## Prevention
 
-Try running some of the following tasks:
+Create a new contract, instead of typecasting an address into a contract inside the constructor.
 
-```shell
-npx hardhat help
-npx hardhat test
-GAS_REPORT=true npx hardhat test
-npx hardhat node
-npx hardhat run scripts/deploy.js
-```
+````contract Good {
+    Helper public helper;
+    constructor() {
+        helper = new Helper();
+    }```
+````
