@@ -19,3 +19,19 @@ Fixed length variables are stored in the stack and variable length variables in 
 ## Functions
 
 Calling functions is gas intensive. Call one function and extract all data than calling multiple functions.
+
+Public functions can be called externally and internally. When the contract is creating functions that will only be called externally, external is better.
+Public functions are copied to memoty which costs gas where external functions are stored in calldata.
+Internal functions are passed as references or the variables and not copied into memory again.
+
+Function midifiers use the same stack as the function they are modifying. An internal function inside of the modifier will solve this.
+Internal functions dont share the same restricted stack as the the origional function.
+
+## Libraries
+
+Libraries are statelass contracts. The bytecode of a functin called from a library doesnt get deployed with the contract and this saves gas.
+
+## Short ciruiting conditionals
+
+Its better to write conditions so that the least functions are executed to determine if statement is true.
+The most likley variable should be the first condition.
