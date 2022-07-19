@@ -17,3 +17,9 @@ How this will happen:
 - User signs a message containing the above information
 - Relayer calls the smart contract and passes along the signed message, and pays for gas
 - Smart contract verifies the signature and decodes the message data, and transfers the tokens from sender to recipient
+
+The signature algorithum used by Ethereum is the Elliptic Curve Digital Signature Algorithum (ECDSA)
+
+## Security Vulnerability
+
+The relayer could keep sending the sinature to the contract and transfering tokens out of sender's account. The transaction should only execute upon an explict second signature. This is called a signature replay attack.
