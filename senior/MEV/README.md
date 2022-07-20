@@ -8,9 +8,9 @@ Gas golfing is making minor optimizations to smart contracts to minimize gas cos
 
 Frontrunners are bots that look through the mempool and search for profitable transactions. They submit the transaction with their address and a higher gas price if the transaaction is profitable.
 
-[Flashbots](https://docs.flashbots.net/flashbots-auction/overview) extend the geth client and allows searchers to submit transactions directly to miners without using the mempool. 
+[Flashbots](https://docs.flashbots.net/flashbots-auction/overview) extend the geth client and allows searchers to submit transactions directly to miners without using the mempool.
 
-Searchers detect if a user can be liquidates and earn the liquidation fees for completing the transaction first. 
+Searchers detect if a user can be liquidates and earn the liquidation fees for completing the transaction first.
 
 The RPC called by Flashbots is the eth_setBundle
 
@@ -22,3 +22,4 @@ When making a transaction of a DEX, selling token A for token B would push the p
 2. User's transaction goes through, which also sells a lot of Token A for Token B, but receives less Token B than originally anticipated. This further drives down Token A price and increases Token B price.
 3. Searcher sells back their Token B for Token A, ending up with more Token A than they started off with, making a profit.
 
+Address of Fake NFT Contract: 0x4858c1dDe3E1ebF53741fA5746003B3206f19fd7
